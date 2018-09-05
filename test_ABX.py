@@ -15,7 +15,7 @@ os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
 #os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 
 parser = argparse.ArgumentParser(description="DnCNN_Test")
-parser.add_argument("--num_of_layers", type=int, default=17, help="Number of total layers")
+parser.add_argument("--num_of_layers", type=int, default=20, help="Number of total layers")
 parser.add_argument("--logdir", type=str, default="logs", help='path of log files')
 parser.add_argument("--net_dn", type=str, default="net_dn.pth", help='path of log files')
 parser.add_argument("--net_sr", type=str, default="net_sr.pth", help='path of log files')
