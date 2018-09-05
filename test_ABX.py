@@ -128,7 +128,7 @@ def main():
 
     ax = plt.subplot("132")
     ax.imshow(I_D, cmap='gray')
-    ax.set_title("Input(with 'realistic' difference & bicubic)")
+    ax.set_title("defective input")
 
     ax = plt.subplot("133")
     ax.imshow(output_sr, cmap='gray')
