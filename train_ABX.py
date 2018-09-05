@@ -110,9 +110,9 @@ def main():
             
             out_train_sr = model_sr(in_train_sr.detach())
             loss_sr = criterion_sr(out_train_sr, difference_sr) / (img_A_train.size()[0]*2)
-            loss_sr.backward()
-            optimizer_sr.step()
-            model_sr.eval()
+            #loss_sr.backward()
+            #optimizer_sr.step()
+            #model_sr.eval()
 
             # Update denoiser network
             model_dn.zero_grad()            
@@ -147,7 +147,7 @@ def main():
             #print(np.amax(img_A_save))
             cv2.imwrite(os.path.join(opt.outf, "%#04dA.png" % (step)), img_A_save)
 
-            img_B_save = torch.clamp(out_train_sr, 0., 1.)
+            img_B_save = torch.clamp(out_train_dn, 0., 1.)
             img_B_save= img_B_save[0,:,:].cpu()
             img_B_save= img_B_save[0].detach().numpy().astype(np.float32)*255
             #print(np.amax(img_A_save))
